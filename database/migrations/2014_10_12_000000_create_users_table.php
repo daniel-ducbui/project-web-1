@@ -16,12 +16,17 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->string('phone_number', 10)->unique();
+            $table->integer('dob');
+
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::statement('ALTER TABLE users ADD profile_picture LONGBLOB NULL');
     }
 
     /**
