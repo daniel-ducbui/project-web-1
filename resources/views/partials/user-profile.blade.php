@@ -5,13 +5,11 @@
 @stop
 
 {{--@extends('partials.navbar')--}}
-@section('navbar-left')
+@section('profile-bar-bottom')
     @if(Auth::user()->id == $user->id)
-        <li class="nav-item" role="presentation">
-            <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
-                href="{{ route('user.information') }}"
-            >Edit profile</a>
-        </li>
+        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+           href="{{ route('user.information') }}"
+        >Edit profile</a>
     @endif
 @stop
 

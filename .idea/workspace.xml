@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dfded381-483b-4ef1-9537-257e4e39075a" name="Default Changelist" comment="Add post/delete status">
+    <list default="true" id="0ecca3c0-5795-4f61-9421-40e9227e2915" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/errors/message-block.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/message-block.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/change-profile-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/change-profile-info.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/user-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/user-profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +19,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -119,10 +125,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\layouts" />
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\public" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views" />
     </key>
@@ -150,12 +162,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dfded381-483b-4ef1-9537-257e4e39075a" name="Default Changelist" comment="" />
+      <changelist id="0ecca3c0-5795-4f61-9421-40e9227e2915" name="Default Changelist" comment="" />
       <created>1575041606664</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575041606664</updated>
       <workItem from="1575041607939" duration="2935000" />
+      <workItem from="1575050123400" duration="922000" />
+      <workItem from="1575073141703" duration="5042000" />
     </task>
     <servers />
   </component>

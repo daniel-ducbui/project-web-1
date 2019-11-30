@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('profile-bar-bottom')
+    @if(Auth::user()->id == $user->id)
+        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+           href="{{ route('user.information') }}"
+        >Edit profile</a>
+    @endif
+@stop
+
 @section('content')
 {{--<div class="container">--}}
 {{--    <div class="row justify-content-center">--}}

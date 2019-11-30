@@ -70,7 +70,7 @@
                     </button>
 
                     <a class="btn btn-light text-primary border btn-block rounded border-primary shadow-sm action-button"
-                       role="button" href="{{ route('change.password') }}" style="background-color: rgba(0,0,0,0);">Change Password
+                       role="button" href="{{ route('password.change') }}" style="background-color: rgba(0,0,0,0);">Change Password
                     </a>
 
                     <a class="btn btn-light text-danger border btn-block rounded border-danger shadow-sm action-button"
