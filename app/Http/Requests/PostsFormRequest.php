@@ -25,7 +25,7 @@ class PostsFormRequest extends FormRequest
     {
         return [
         'post_content' => 'min:0',
-            'post_photo' => 'image|mimes:jpeg,gif,png,jpg,svg|max:2048',
+            'post_photo' => 'image|mimes:jpeg,gif,png,jpg,svg|max:1024',
         ];
     }
 }

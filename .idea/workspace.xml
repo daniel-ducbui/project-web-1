@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ecca3c0-5795-4f61-9421-40e9227e2915" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/social-network-lrv-v6-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/social-network-lrv-v6-1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/errors/message-block.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/message-block.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PostsFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PostsFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/change-profile-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/change-profile-info.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/create-status-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/create-status-bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/user-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/user-profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +28,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,6 +139,11 @@
   </component>
   <component name="ProjectId" id="1UIQPfA67i3rRL7vkHQEwwHvnw9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -139,23 +162,23 @@
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -169,7 +192,11 @@
       <updated>1575041606664</updated>
       <workItem from="1575041607939" duration="2935000" />
       <workItem from="1575050123400" duration="922000" />
-      <workItem from="1575073141703" duration="5042000" />
+      <workItem from="1575073141703" duration="5923000" />
+      <workItem from="1575080049526" duration="685000" />
+      <workItem from="1575080760271" duration="14000" />
+      <workItem from="1575085080101" duration="1563000" />
+      <workItem from="1575090245160" duration="7176000" />
     </task>
     <servers />
   </component>
@@ -192,5 +219,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add post/delete status" />
     <option name="LAST_COMMIT_MESSAGE" value="Add post/delete status" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1575097391987">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575097391987" />
   </component>
 </project>

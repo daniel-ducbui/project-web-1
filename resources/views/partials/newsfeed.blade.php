@@ -21,7 +21,6 @@
                             <div class="col-1 d-xl-flex justify-content-xl-center align-items-xl-center"
                                  style="padding-right: 0px;padding-left: 0px;"><img
                                     class="rounded-circle img-fluid border rounded"
-                                    {{--src="{{ 'data:image/jpeg;base64,' . base64_encode($user->profile_picture) }}"--}}
                                     src="{{ URL::to('src/images/default_profile_picture.svg') }}"
                                     width="80%">
                             </div>
@@ -45,11 +44,14 @@
                     </div>
                     <p class="card-text"><small class="text-muted">{{ $p->created_at }}</small>
                     </p>
-                    <div class="row interaction" style="margin-left: 10px;">
-                        @if(Auth::user() == $p->user)
-                            <a href="#" class="edit">Edit</a> | <!-- Chỗ này chưa làm -->
-                            <a href="{{ route('post.delete', ['post_id' => $p->id]) }}">Delete</a>
-                        @endif
+                    <div class="row interaction justify-content-end" style="margin-left: 10px;">
+                        <div class="col-4">
+                            @if(Auth::user() == $p->user)
+                                <a class="btn btn-outline-info edit" href="#">Edit</a> <!-- Chỗ này chưa làm -->
+                                <a class="btn btn-outline-danger"
+                                   href="{{ route('post.delete', ['post_id' => $p->id]) }}">Delete</a>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,7 +60,7 @@
 @endforeach
 <!-- Page navigator -->
 <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-6 offset-md-5">
         {!! $posts->render() !!}
     </div>
 </div>

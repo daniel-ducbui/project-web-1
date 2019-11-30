@@ -6,11 +6,28 @@
 
 {{--@extends('partials.navbar')--}}
 @section('profile-bar-bottom')
-    @if(Auth::user()->id == $user->id)
-        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
-           href="{{ route('user.information') }}"
-        >Edit profile</a>
-    @endif
+    {{--    @if(Auth::user()->id == $user->id)--}}
+    {{--        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"--}}
+    {{--           href="{{ route('user.information') }}"--}}
+    {{--        >Edit profile</a>--}}
+    {{--    @endif--}}
+
+    <div class="row justify-content-center">
+        <div class="col">
+            @if(Auth::user()->id != $user->id)
+                <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                   href=""
+                >Add friend</a>
+                <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                   href=""
+                >Follow</a>
+            @else
+                <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                   href="{{ route('user.information') }}"
+                >Edit profile</a>
+            @endif
+        </div>
+    </div>
 @stop
 
 @section('content')
