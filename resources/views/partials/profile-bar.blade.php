@@ -13,8 +13,15 @@
                 >
             @endif
         </div>
-
         <hr>
-        <h4 class="card-title">{{ $user->name }}</h4>
+        <div class="d-block d-xl-flex justify-content-xl-center align-items-xl-center">
+            <h4 class="card-title">{{ $user->name }}</h4>
+        </div>
+        <div class="d-block d-xl-flex justify-content-xl-center align-items-xl-center">
+            {{-- Something might here--}}
+        </div>
+        <div class="d-block d-xl-flex">
+            @yield('profile-bar-bottom')
+        </div>
     </div>
 </div>

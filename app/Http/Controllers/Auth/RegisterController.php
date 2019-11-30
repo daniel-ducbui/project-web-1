@@ -84,7 +84,6 @@ class RegisterController extends Controller
 
         $this->guard()->logout($user);
 
-        return $this->registered($request, $user)
-            ? : redirect($this->redirectPath());
+        return $this->registered($request, $user) ? : redirect($this->redirectPath())->with('message', 'Verify your email');
     }
 }
