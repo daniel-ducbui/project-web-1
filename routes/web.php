@@ -54,3 +54,15 @@ Route::get('change-password', 'ChangePasswordController@index')->middleware(['au
 Route::post('change-password', 'ChangePasswordController@store')->name('password.change')->middleware(['auth', 'verified']);
 ///
 /// End change password
+
+/// Friendships
+///
+Route::get('/profile/{user_name}/{recipient_id}/request', 'FriendshipsController@send')->name('request.send');
+
+Route::get('/profile/{user_name}/{sender_id}/accept', 'FriendshipsController@accept')->name('request.accept');
+
+Route::get('/profile/{user_name}/{sender_id}/deny', 'FriendshipsController@deny')->name('request.deny');
+
+Route::get('/profile/{user_name}/{sender_id}/unfriend', 'FriendshipsController@unfriend')->name('request.unfriend');
+///
+/// End Friendships
