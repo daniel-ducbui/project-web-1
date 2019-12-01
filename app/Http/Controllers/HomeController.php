@@ -93,9 +93,10 @@ class HomeController extends Controller
         return redirect()->back()->with(['message' => 'Post deleted']);
     }
 
-    public function edit()
+    public function edit($id)
     {
         // Pending
+        //$post = Post::where('id', $id)->first();
         return redirect()->back()->with('message', 'Function is not done yet!');
     }
 }

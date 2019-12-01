@@ -38,11 +38,15 @@ Route::post('/home/post/edit', 'HomeController@edit')->name('post.edit')->middle
 
 /// UsersController
 ///
-Route::get('/profile/{user_name}/{user_id}', 'UsersController@userProfile')->name('user.profile')->middleware(['auth', 'verified']);
+Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function () {
 
-Route::get('/profile-details', 'UsersController@userInformation')->name('user.information')->middleware(['auth', 'verified']);
+    Route::get('/profile/{user_name}/{user_id}', 'UsersController@userProfile')->name('user.profile')->middleware(['auth', 'verified']);
 
-Route::post('/update-profile-details', 'UsersController@update')->name('user.update')->middleware(['auth', 'verified']);
+    Route::get('/profile-details', 'UsersController@userInformation')->name('user.information')->middleware(['auth', 'verified']);
+
+    Route::post('/update-profile-details', 'UsersController@update')->name('user.update')->middleware(['auth', 'verified']);
+
+});
 ///
 /// End UsersController
 
@@ -54,3 +58,10 @@ Route::get('change-password', 'ChangePasswordController@index')->middleware(['au
 Route::post('change-password', 'ChangePasswordController@store')->name('password.change')->middleware(['auth', 'verified']);
 ///
 /// End change password
+
+
+/// Relationship
+///
+Route::get('/profile/{user_name}/{user_id}/befriend', 'FriendshipsController@befriend')->name('request.send');
+///
+/// End Relationship

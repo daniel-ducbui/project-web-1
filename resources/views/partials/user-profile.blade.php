@@ -6,18 +6,24 @@
 
 {{--@extends('partials.navbar')--}}
 @section('profile-bar-bottom')
-    {{--    @if(Auth::user()->id == $user->id)--}}
-    {{--        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"--}}
-    {{--           href="{{ route('user.information') }}"--}}
-    {{--        >Edit profile</a>--}}
-    {{--    @endif--}}
-
     <div class="row justify-content-center">
         <div class="col">
-            @if(Auth::user()->id != $user->id)
-                <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
-                   href=""
-                >Add friend</a>
+            @if(Auth::user()->id != $user->id) {{-- Check if this is current user profile --}}
+                @if(Auth::user()->getFriendship((int)$user->id) == false) {{-- Check if have friend ship --}}
+                    @if(Auth::user()->getFriendship((int)$user->id) == false) {{-- Check if this this user sent friend requests to current user --}}
+                    <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                       href="{{ '\home' }}"
+                    >Accept</a>
+                    @else
+                        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                           href=""
+                        >Pending</a>
+                    @endif
+                @else
+                    <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                       href="{{ route('request.send', [$user->name, $user->id]) }}"
+                    >Add friend</a>
+                @endif
                 <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
                    href=""
                 >Follow</a>
