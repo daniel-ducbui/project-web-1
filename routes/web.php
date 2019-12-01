@@ -35,26 +35,26 @@ Route::post('/home/post/edit', 'HomeController@edit')->name('post.edit')->middle
 ///
 /// End HomeController
 
+Route::middleware('auth', 'verified')->group(function () {
+    /// UsersController
+    ///
+    Route::get('/profile/{user_name}s/{user_id}', 'UsersController@userProfile')->name('user.profile');
 
-/// UsersController
-///
-Route::get('/profile/{user_name}/{user_id}', 'UsersController@userProfile')->name('user.profile')->middleware(['auth', 'verified']);
+    Route::get('/profile-details', 'UsersController@userInformation')->name('user.information');
 
-Route::get('/profile-details', 'UsersController@userInformation')->name('user.information')->middleware(['auth', 'verified']);
-
-Route::post('/update-profile-details', 'UsersController@update')->name('user.update')->middleware(['auth', 'verified']);
-///
-/// End UsersController
+    Route::post('/update-profile-details', 'UsersController@update')->name('user.update');
+    ///
+    /// End UsersController
 
 
-/// Change password
-///
-Route::get('change-password', 'ChangePasswordController@index')->middleware(['auth', 'verified']);
+    /// Change password
+    ///
+    Route::get('change-password', 'ChangePasswordController@index');
 
-Route::post('change-password', 'ChangePasswordController@store')->name('password.change')->middleware(['auth', 'verified']);
-///
-/// End change password
-
+    Route::post('change-password', 'ChangePasswordController@store')->name('password.change');
+    ///
+    /// End change password
+});
 /// Friendships
 ///
 Route::get('/profile/{user_name}/{recipient_id}/request', 'FriendshipsController@send')->name('request.send');
