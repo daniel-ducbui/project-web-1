@@ -3,14 +3,40 @@
 @section('head.title')
     {{ $user->name }}
 @stop
-
 {{--@extends('partials.navbar')--}}
 @section('profile-bar-bottom')
-    @if(Auth::user()->id == $user->id)
-        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
-           href="{{ route('user.information') }}"
-        >Edit profile</a>
-    @endif
+    <div class="row justify-content-center">
+        <div class="col">
+            @if(Auth::user()->id != $user->id)
+                @if(Auth::user()->isFriendWith($user))
+                    <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                       href="{{ route('request.unfriend', [$user->name, $user->id]) }}"
+                    >Unfriend</a>
+                @else
+                    @if(Auth::user()->hasSentFriendRequestTo($user))
+                        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                           href=""
+                        >Pending</a>
+                    @elseif(Auth::user()->hasFriendRequestFrom($user))
+                        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                           href="{{ route('request.accept', [$user->name, $user->id]) }}"
+                        >Accept</a>
+                        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                           href="{{ route('request.deny', [$user->name, $user->id]) }}"
+                        >Deny</a>
+                    @else
+                        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                           href="{{ route('request.send', [$user->name, $user->id]) }}"
+                        >Add friend</a>
+                    @endif
+                @endif
+            @else
+                <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                   href="{{ route('user.information') }}"
+                >Edit profile</a>
+            @endif
+        </div>
+    </div>
 @stop
 
 @section('content')

@@ -19,7 +19,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('profile', function () {
     // Only verified users may enter...
-///
 })->middleware('verified');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -32,7 +31,7 @@ Route::post('/home', 'HomeController@store')->name('post.store')->middleware('au
 
 Route::get('/home/{post_id}', 'HomeController@destroy')->name('post.delete')->middleware('auth');;
 
-Route::post('', 'HomeController@edit')->name('post.edit')->middleware('auth'); // Pending
+Route::post('/home/post/edit', 'HomeController@edit')->name('post.edit')->middleware('auth'); // Pending
 ///
 /// End HomeController
 
@@ -40,8 +39,6 @@ Route::post('', 'HomeController@edit')->name('post.edit')->middleware('auth'); /
 /// UsersController
 ///
 Route::get('/profile/{user_name}/{user_id}', 'UsersController@userProfile')->name('user.profile')->middleware(['auth', 'verified']);
-
-// I am here. Next coming up -> create view for user
 
 Route::get('/profile-details', 'UsersController@userInformation')->name('user.information')->middleware(['auth', 'verified']);
 
@@ -56,4 +53,16 @@ Route::get('change-password', 'ChangePasswordController@index')->middleware(['au
 
 Route::post('change-password', 'ChangePasswordController@store')->name('password.change')->middleware(['auth', 'verified']);
 ///
-/// ENd reset password
+/// End change password
+
+/// Friendships
+///
+Route::get('/profile/{user_name}/{recipient_id}/request', 'FriendshipsController@send')->name('request.send');
+
+Route::get('/profile/{user_name}/{sender_id}/accept', 'FriendshipsController@accept')->name('request.accept');
+
+Route::get('/profile/{user_name}/{sender_id}/deny', 'FriendshipsController@deny')->name('request.deny');
+
+Route::get('/profile/{user_name}/{sender_id}/unfriend', 'FriendshipsController@unfriend')->name('request.unfriend');
+///
+/// End Friendships

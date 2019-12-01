@@ -22,11 +22,10 @@
                 <div class="form-group" style="margin-bottom: 0px;margin-left: 5px;">
                     <select id="privacy"
                             class="custom-select custom-select-sm"
-                            name="privacy"
-                            value="{{ old('privacy') }}">
-                        <option value="0">Only me</option>
-                        <option value="2">Friends</option>
-                        <option value="3">Public</option>
+                            name="privacy">
+                        <option value="0" {{ old('privacy') == 0 ? 'selected' : '' }}>Only me</option>
+                        <option value="1" {{ old('privacy') == 1 ? 'selected' : '' }}>Friends</option>
+                        <option value="2" {{ old('privacy') == 2 ? 'selected' : '' }}>Public</option>
                     </select>
                 </div>
             </div>
