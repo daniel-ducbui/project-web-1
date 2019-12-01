@@ -18,7 +18,10 @@ class UsersController extends Controller
         // Just Only posts by user_id
         $posts = Post::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(5);
 
-        return view('partials.user-profile', compact('posts'))->with(['user' => $user, 'currentUser' => $currentUser]);
+        // Get friendships
+        $friendships = $currentUser->getAllFriendships();
+
+        return view('partials.user-profile', compact('posts', 'friendships'))->with(['user' => $user, 'currentUser' => $currentUser]);
     }
 
     public function userInformation()

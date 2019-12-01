@@ -29,9 +29,13 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
+        // Get posts
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
-        return view('home', compact('posts'))->with(['user' => $user]);
+        // Get friendships
+        $friendships = $user->getAllFriendships();
+
+        return view('home', compact('posts', 'friendships'))->with(['user' => $user]);
     }
 
     public function store(PostsFormRequest $request)

@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c0ee8c3b-8feb-40c4-b0b3-7097aeeed9e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/images/profile/_temp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/images/profile/_temp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/user-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/user-profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,13 +215,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add post/delete status" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="616" y="262" key="run.anything.popup" timestamp="1575189112189">
+    <state x="616" y="262" key="run.anything.popup" timestamp="1575201143846">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575189112189" />
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1575187004344">
+    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575201143846" />
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1575209819313">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575187004344" />
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575209819313" />
   </component>
 </project>
