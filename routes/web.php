@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth', 'verified')->group(function () {
     /// UsersController
     ///
-    Route::get('/profile/{user_name}s/{user_id}', 'UsersController@userProfile')->name('user.profile');
+    Route::get('/profile/{user_name}/{user_id}', 'UsersController@userProfile')->name('user.profile');
 
     Route::get('/profile/details', 'UsersController@userInformation')->name('user.information');
 

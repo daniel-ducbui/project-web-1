@@ -29,13 +29,17 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        // Get posts
-        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+        // Get posts (User own and others public)
+        $posts = Post::Where(['user_id' => $user->id])
+            ->orWhere('privacy', 2)
+            ->orderBy('created_at', 'desc')->paginate(10);
 
         // Get friendships
-        $friendships = Auth::user()->getAcceptedFriendships();
+        $accepted = Auth::user()->getAcceptedFriendships();
+        // Get pending
+        $pending = Auth::user()->getPendingFriendships();
 
-        return view('home', compact('posts', 'friendships'))->with(['user' => $user]);
+        return view('home', compact('posts', 'accepted', 'pending'))->with(['user' => $user]);
     }
 
     public function store(PostsFormRequest $request)
