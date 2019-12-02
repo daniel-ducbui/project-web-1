@@ -29,8 +29,10 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
-        // Get posts
-        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+        // Get posts (User own and others public)
+        $posts = Post::Where(['user_id' => $user->id])
+            ->orWhere('privacy', 2)
+            ->orderBy('created_at', 'desc')->paginate(10);
 
         // Get friendships
         $accepted = Auth::user()->getAcceptedFriendships();

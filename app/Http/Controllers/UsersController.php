@@ -13,8 +13,17 @@ class UsersController extends Controller
     {
         $user = User::where('id', $user_id)->first();
 
-        // Just Only posts by user_id
-        $posts = Post::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(5);
+        if (Auth::user()->id == $user->id) {
+            $posts = Post::where('user_id', $user_id)
+                ->orderBy('created_at', 'desc')->paginate(10); // All posts if this is user own profile
+        } elseif (Auth::user()->isFriendWith($user)) {
+            $posts = Post::where('user_id', $user_id)->where('privacy', 1)
+                ->orWhere('user_id', $user_id)->where('privacy', 2)
+                ->orderBy('created_at', 'desc')->paginate(10); // Posts if user is this profile friend
+        } else {
+            $posts = Post::where('user_id', $user_id)->where('privacy', 2)
+                ->orderBy('created_at', 'desc')->paginate(10); // Posts if user is not this profile friend
+        }
 
         // Get friendships
         $accepted = Auth::user()->getAcceptedFriendships();

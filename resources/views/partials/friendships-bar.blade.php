@@ -91,21 +91,10 @@
                     </div>
                     <div class="col align-self-center justify-content-xl-start align-items-xl-center">
                         <div class="row">
-                            {{--                            @if(Auth::user()->isFriendWith($a->sender == Auth::user() ? $a->recipient : $a->sender)) --}}{{-- Check if this profile is my friend --}}
                             <div class="col"
                                  style="padding-right: 0px;padding-left: 0px;margin-right: 2px;margin-left: 2px;"><a
                                     class="btn btn-outline-success btn-sm" role="button" href="">Message</a>
                             </div>
-                            {{--                            @else--}}
-                            {{--                                <div class="col"--}}
-                            {{--                                     style="padding-right: 0px;padding-left: 0px;margin-right: 2px;margin-left: 2px;"><a--}}
-                            {{--                                        class="btn btn-outline-primary btn-sm" role="button" href="">v</a>--}}
-                            {{--                                </div>--}}
-                            {{--                                <div class="col"--}}
-                            {{--                                     style="padding-right: 0px;padding-left: 0px;margin-right: 2px;margin-left: 2px;"><a--}}
-                            {{--                                        class="btn btn-outline-danger btn-sm" role="button" href="">x</a>--}}
-                            {{--                                </div>--}}
-                            {{--                            @endif--}}
                         </div>
                     </div>
                 </div>
