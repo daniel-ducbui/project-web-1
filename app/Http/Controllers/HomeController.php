@@ -33,7 +33,7 @@ class HomeController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         // Get friendships
-        $friendships = $user->getAllFriendships();
+        $friendships = Auth::user()->getAcceptedFriendships();
 
         return view('home', compact('posts', 'friendships'))->with(['user' => $user]);
     }

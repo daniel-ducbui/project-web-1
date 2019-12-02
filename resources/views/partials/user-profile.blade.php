@@ -9,12 +9,12 @@
         <div class="col">
             @if(Auth::user()->id != $user->id) {{-- Check if this is my profile --}}
                 @if(Auth::user()->isFriendWith($user)) {{-- Check if this profile is my friend --}}
-                    <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                    <a class="btn btn-light text-danger border rounded border-danger shadow-sm action-button"
                        href="{{ route('request.unfriend', [$user->name, $user->id]) }}"
                     >Unfriend</a>
                 @else
                     @if(Auth::user()->hasSentFriendRequestTo($user)) {{-- Check if I have already sent friend request to this profile --}}
-                        <a class="btn btn-light text-info border rounded border-info shadow-sm action-button"
+                        <a class="btn btn-light text-warning border rounded border-warning shadow-sm action-button disabled"
                            href=""
                         >Pending</a>
                     @elseif(Auth::user()->hasFriendRequestFrom($user)) {{-- Check if this profile sent me a friend request --}}
@@ -46,7 +46,7 @@
                 @include('partials.left-home-page')
             </div>
             <div class="col-6">
-                @include('partials.create-status-bar')
+{{--                @include('partials.create-status-bar')--}}
 
                 @include('partials.newsfeed')
             </div>
