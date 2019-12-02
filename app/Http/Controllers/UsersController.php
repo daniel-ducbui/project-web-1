@@ -17,9 +17,11 @@ class UsersController extends Controller
         $posts = Post::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(5);
 
         // Get friendships
-        $friendships = Auth::user()->getAcceptedFriendships();
+        $accepted = Auth::user()->getAcceptedFriendships();
+        // Get pending
+        $pending = Auth::user()->getPendingFriendships();
 
-        return view('partials.user-profile', compact('posts', 'friendships'))->with(['user' => $user]);
+        return view('partials.user-profile', compact('posts', 'accepted', 'pending'))->with(['user' => $user]);
     }
 
     public function userInformation()

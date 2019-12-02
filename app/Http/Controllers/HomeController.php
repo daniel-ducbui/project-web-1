@@ -33,9 +33,11 @@ class HomeController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         // Get friendships
-        $friendships = Auth::user()->getAcceptedFriendships();
+        $accepted = Auth::user()->getAcceptedFriendships();
+        // Get pending
+        $pending = Auth::user()->getPendingFriendships();
 
-        return view('home', compact('posts', 'friendships'))->with(['user' => $user]);
+        return view('home', compact('posts', 'accepted', 'pending'))->with(['user' => $user]);
     }
 
     public function store(PostsFormRequest $request)
