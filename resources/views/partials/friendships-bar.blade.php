@@ -3,7 +3,7 @@
     @foreach($pending as $p)
         <div class="row" style="margin: 5px;">
             <div class="col">
-                <div class="row rounded border" style="padding: 10px;">
+                <div class="row rounded border border-warning" style="padding: 10px;">
                     <div class="col-2 d-xl-flex justify-content-xl-center align-items-xl-center"
                          style="padding-right: 0px;padding-left: 0px;">
 
