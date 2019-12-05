@@ -16,7 +16,7 @@ class UsersController extends Controller
         if (Auth::user()->id == $user->id) {
             $posts = Post::where('user_id', $user_id)
                 ->orderBy('created_at', 'desc')->paginate(10); // All posts if this is user own profile
-        } elseif (Auth::user()->isFriendWith($user)) {
+        } elseif (Auth::user()->isFriendWith($user->id)) {
             $posts = Post::where('user_id', $user_id)->where('privacy', 1)
                 ->orWhere('user_id', $user_id)->where('privacy', 2)
                 ->orderBy('created_at', 'desc')->paginate(10); // Posts if user is this profile friend
@@ -25,12 +25,12 @@ class UsersController extends Controller
                 ->orderBy('created_at', 'desc')->paginate(10); // Posts if user is not this profile friend
         }
 
-        // Get friendships
-        $accepted = Auth::user()->getAcceptedFriendships();
-        // Get pending
-        $pending = Auth::user()->getPendingFriendships();
+//        // Get friendships
+//        $accepted = Auth::user()->getAcceptedFriendships();
+//        // Get pending
+//        $pending = Auth::user()->getPendingFriendships();
 
-        return view('partials.user-profile', compact('posts', 'accepted', 'pending'))->with(['user' => $user]);
+        return view('partials.user-profile', compact('posts'))->with(['user' => $user]);
     }
 
     public function userInformation()
