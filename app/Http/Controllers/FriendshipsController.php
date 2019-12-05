@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Friendship;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,31 +21,46 @@ class FriendshipsController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function send($name, $recipient)
+    public function send($name, $recipient_id)
     {
-        $user = User::where('id', $recipient)->first();
-        Auth::user()->befriend($user);
-        return redirect()->back()->with(['user' => $user, 'message' => 'Friend requests has sent']);
+        Auth::user()->befriend($recipient_id);
+
+        return redirect()->back()->with(['message' => 'Friend requests has sent']);
     }
 
-    public function accept($name, $sender)
+    public function accept($name, $sender_id)
     {
-        $user = User::where('id', $sender)->first();
-        Auth::user()->acceptFriendRequest($user);
-        return redirect()->back()->with(['user' => $user, 'message' => 'Friend requests has accepted. You are now friend']);
+        Auth::user()->acceptFriendRequest($sender_id);
+        return redirect()->back()->with(['message' => 'Friend requests has accepted. You are now friend']);
     }
 
-    public function deny($name, $sender)
+    public function deny($name, $sender_id)
     {
-        $user = User::where('id', $sender)->first();
-        Auth::user()->denyFriendRequest($user);
-        return redirect()->back()->with(['user' => $user, 'message' => 'Friend requests has denied']);
+        Auth::user()->denyFriendRequest($sender_id);
+        return redirect()->back()->with(['message' => 'Friend requests has denied']);
     }
 
-    public function unfriend($name, $friend)
+    public function unfriend($name, $this_user)
     {
-        $user = User::where('id', $friend)->first();
-        Auth::user()->unfriend($user);
-        return redirect()->back()->with(['user' => $user, 'message' => 'Unfriend']);
+        Auth::user()->unfriend($this_user);
+        return redirect()->back()->with(['message' => 'Unfriended']);
+    }
+
+    public function cancel($name, $this_user)
+    {
+        Auth::user()->cancelFriendRequest($this_user);
+        return redirect()->back()->with(['message' => 'Cancelled']);
+    }
+
+    public function follow($name, $recipient_id)
+    {
+        Auth::user()->follow($recipient_id);
+        return redirect()->back()->with(['message' => 'Followed']);
+    }
+
+    public function unfollow($name, $recipient_id)
+    {
+        Auth::user()->unfollow($recipient_id);
+        return redirect()->back()->with(['message' => 'Unfollowed']);
     }
 }

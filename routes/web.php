@@ -40,7 +40,13 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile/{user_name}/{sender_id}/deny', 'FriendshipsController@deny')->name('request.deny');
 
-    Route::get('/profile/{user_name}/{sender_id}/unfriend', 'FriendshipsController@unfriend')->name('request.unfriend');
+    Route::get('/profile/{user_name}/{this_user}/unfriend', 'FriendshipsController@unfriend')->name('request.unfriend');
+
+    Route::get('/profile/{user_name}/{recipient_id}/cancel', 'FriendshipsController@cancel')->name('request.cancel');
+
+    Route::get('/profile/{user_name}/{recipient_id}/follow', 'FriendshipsController@follow')->name('request.follow');
+
+    Route::get('/profile/{user_name}/{recipient_id}/unfollow', 'FriendshipsController@unfollow')->name('request.unfollow');
     ///
     /// End Friendships
 });

@@ -34,12 +34,12 @@ class HomeController extends Controller
             ->orWhere('privacy', 2)
             ->orderBy('created_at', 'desc')->paginate(10);
 
-        // Get friendships
-        $accepted = Auth::user()->getAcceptedFriendships();
-        // Get pending
-        $pending = Auth::user()->getPendingFriendships();
+//        // Get friendships
+//        $accepted = Auth::user()->getAcceptedFriendships();
+//        // Get pending
+//        $pending = Auth::user()->getPendingFriendships();
 
-        return view('home', compact('posts', 'accepted', 'pending'))->with(['user' => $user]);
+        return view('home', compact('posts'))->with(['user' => $user]);
     }
 
     public function store(PostsFormRequest $request)
