@@ -83,7 +83,7 @@ class UsersController extends Controller
             ]);
         }
 
-        if (($request->email != $user->email) && $this->validate($request, ['email' => 'required|email|max:255|unique:users'])) {
+        if (($request->email != $user->email) && $this->validate($request, ['email' => 'required|email|max:255|unique:users|regex:/^.+@.+$/i'])) {
             $user->update([
                 'email' => $request->get('email'),
             ]);
