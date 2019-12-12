@@ -30,12 +30,12 @@
                                id="email" name="email"
                                value="{{ $user->email }}"
                                placeholder="Enter email"
-                               autocomplete="on" required disabled></div>
+                               autocomplete="on" required></div>
                     <div class="form-group"><label class="d-block" for="phone_number">Phone Number</label>
                         <input class="form-control" type="tel"
                                name="phone_number" placeholder="Enter phone-number"
                                value="{{ $user->phone_number }}"
-                               autocomplete="on" required disabled></div>
+                               autocomplete="on" required></div>
 
                     <div class="form-group"><label class="d-block"
                                                    for="dob">Birthday</label>
@@ -70,7 +70,7 @@
                     </button>
 
                     <a class="btn btn-light text-primary border btn-block rounded border-primary shadow-sm action-button"
-                       role="button" href="{{ route('change.password') }}" style="background-color: rgba(0,0,0,0);">Change Password
+                       role="button" href="{{ route('password.change') }}" style="background-color: rgba(0,0,0,0);">Change Password
                     </a>
 
                     <a class="btn btn-light text-danger border btn-block rounded border-danger shadow-sm action-button"

@@ -17,31 +17,58 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('profile', function () {
-    // Only verified users may enter...
-
-})->middleware('verified');
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-/// HomeController
-///
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::middleware('auth')->group(function () {
+    /// HomeController
+    ///
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/home', 'HomeController@store')->name('post.store')->middleware('auth');
+    Route::post('/home', 'HomeController@store')->name('post.store');
 
-Route::get('/home/{post_id}', 'HomeController@destroy')->name('post.delete');
+    Route::get('/home/{post_id}', 'HomeController@destroy')->name('post.delete');;
 
-Route::post('', 'HomeController@edit')->name('post.edit'); // Pending
-///
-/// End HomeController
-///
-/// UsersController
-///
-Route::get('/profile/{user_name}/{user_id}', 'UsersController@userProfile')->name('user.profile')->middleware('auth');
+    Route::post('/home/post/edit', 'HomeController@edit')->name('post.edit'); // Pending
+    ///
+    /// End HomeController
 
-Route::get('/profile-details', 'UsersController@userInformation')->name('user.information')->middleware('auth');
+    /// Friendships
+    ///
+    Route::get('/profile/{user_name}/{recipient_id}/request', 'FriendshipsController@send')->name('request.send');
 
-Route::post('/update-profile-details', 'UsersController@update')->name('user.update')->middleware('auth');
-///
-/// End UsersController
+    Route::get('/profile/{user_name}/{sender_id}/accept', 'FriendshipsController@accept')->name('request.accept');
+
+    Route::get('/profile/{user_name}/{sender_id}/deny', 'FriendshipsController@deny')->name('request.deny');
+
+    Route::get('/profile/{user_name}/{this_user}/unfriend', 'FriendshipsController@unfriend')->name('request.unfriend');
+
+    Route::get('/profile/{user_name}/{recipient_id}/cancel', 'FriendshipsController@cancel')->name('request.cancel');
+
+    Route::get('/profile/{user_name}/{recipient_id}/follow', 'FriendshipsController@follow')->name('request.follow');
+
+    Route::get('/profile/{user_name}/{recipient_id}/unfollow', 'FriendshipsController@unfollow')->name('request.unfollow');
+    ///
+    /// End Friendships
+});
+
+
+Route::middleware('auth', 'verified')->group(function () {
+    /// UsersController
+    ///
+    Route::get('/profile/{user_name}/{user_id}', 'UsersController@userProfile')->name('user.profile');
+
+    Route::get('/profile/details', 'UsersController@userInformation')->name('user.information');
+
+    Route::post('/profile/details/update', 'UsersController@update')->name('user.update');
+    ///
+    /// End UsersController
+
+
+    /// Change password
+    ///
+    Route::get('/password/change', 'ChangePasswordController@index');
+
+    Route::post('/password/change', 'ChangePasswordController@store')->name('password.change');
+    ///
+    /// End change password
+});
