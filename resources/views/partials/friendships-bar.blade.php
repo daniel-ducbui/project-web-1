@@ -9,15 +9,16 @@
 
 {{--                        <!-- Load image (Optimized) -->--}}
 {{--                        <img class="rounded-circle img-fluid border rounded"--}}
-{{--                             src="{{ 'data:image/jpeg;base64,' . base64_encode( $p->sender == Auth::user() ? $p->recipient->profile_picture : $p->sender->profile_picture ) }}"--}}
+{{--                             src="{{ 'data:image/jpeg;base64,' . base64_encode( $p->sender == Auth::user()->id ? $p->user->profile_picture : $p->user->profile_picture ) }}"--}}
 {{--                             width="80%">--}}
 {{--                        <!-- End load image (Optimized) -->--}}
 
 {{--                    </div>--}}
 {{--                    <div class="col-6 align-self-center justify-content-xl-start align-items-xl-center">--}}
-{{--                        @if($p->sender == Auth::user())--}}
+{{--                               @dd($p->user)--}}
+{{--                        @if($p->sender == Auth::user()->id)--}}
 {{--                            <a class="card-title"--}}
-{{--                               href="{{ route('user.profile', [$p->recipient->name, $p->recipient->id]) }}"--}}
+{{--                               href="{{ route('user.profile', [$p->recipient, $p->recipient]) }}"--}}
 {{--                               style="margin-bottom: 0px;font-size: 15px;">--}}
 {{--                                {{ $p->recipient->name }}--}}
 {{--                            </a>--}}
@@ -31,7 +32,7 @@
 {{--                    </div>--}}
 {{--                    <div class="col align-self-center justify-content-xl-start align-items-xl-center">--}}
 {{--                        <div class="row">--}}
-{{--                            @if(Auth::user() == $p->sender)--}}
+{{--                            @if(Auth::user()->id == $p->sender)--}}
 {{--                                <div class="col"--}}
 {{--                                     style="padding-right: 0px;padding-left: 0px;margin-right: 2px;margin-left: 2px;"><a--}}
 {{--                                        class="btn btn-outline-warning btn-sm disabled" role="button"--}}

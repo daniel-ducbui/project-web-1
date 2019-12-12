@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0ee8c3b-8feb-40c4-b0b3-7097aeeed9e6" name="Default Changelist" comment="Add post/delete status">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/social-network-lrv-v6-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/social-network-lrv-v6-1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Friendship.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Friendship.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Traits/Friendable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/Friendable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_072955_create_friendships_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_072955_create_friendships_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_01_072956_create_friendships_groups_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/left-home-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/left-home-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/right-home-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/right-home-page.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,17 +174,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\layouts" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\public" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
-      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth" />
     </key>
   </component>
   <component name="RunManager">
@@ -231,6 +230,10 @@
       <workItem from="1575285585198" duration="4983000" />
       <workItem from="1575540034700" duration="202000" />
       <workItem from="1575540459116" duration="6525000" />
+      <workItem from="1575803954078" duration="637000" />
+      <workItem from="1576037120823" duration="5915000" />
+      <workItem from="1576119839097" duration="283000" />
+      <workItem from="1576127571934" duration="21454000" />
     </task>
     <servers />
   </component>
@@ -277,13 +280,54 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="769" y="479" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.46.1920.1034@0.46.1920.1034" timestamp="1575280314804" />
-    <state x="616" y="262" key="run.anything.popup" timestamp="1575271518955">
+    <state x="616" y="262" key="run.anything.popup" timestamp="1576145879579">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575271518955" />
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1575543092464">
+    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1576145879579" />
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1576154737854">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575543092464" />
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1576154737854" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
+          <line>22</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
+          <line>26</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
+          <line>28</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
+          <line>34</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
+          <line>44</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
+          <line>49</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

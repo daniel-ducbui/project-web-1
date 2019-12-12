@@ -2,44 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Friendship;
 use App\Http\Requests\PostsFormRequest;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Login;
+use App\User;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware(['auth', 'verified']);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+    // Only me: 0
+    // Friend: 1
+    // Public: 2
     public function index()
     {
         $user = Auth::user();
 
-        // Get posts (User own and others public)
-        $posts = Post::Where(['user_id' => $user->id])
-            ->orWhere('privacy', 2)
-            ->orderBy('created_at', 'desc')->paginate(10);
+        $posts = $this->getPosts();
 
-//        // Get friendships
-//        $accepted = Auth::user()->getAcceptedFriendships();
-//        // Get pending
-//        $pending = Auth::user()->getPendingFriendships();
+        // Get friendships
+        $accepted = Auth::user()->getAcceptedFriendships();
+        // Get pending
+        $pending = Auth::user()->getPendingFriendships();
 
-        return view('home', compact('posts'))->with(['user' => $user]);
+        return view('home', compact('posts', 'accepted', 'pending'))->with(['user' => $user]);
+    }
+
+    public function getPosts()
+    {
+        $posts = Post::where(['user_id' => Auth::user()->id])
+            ->Where(['privacy' => 1])
+            ->orWhere(['privacy' => 2])
+            ->orWhere(['privacy' => 0])
+            ->where(['user_id' => Auth::user()->id]);
+
+        return $posts->orderByDesc('created_at')->paginate(10);
     }
 
     public function store(PostsFormRequest $request)

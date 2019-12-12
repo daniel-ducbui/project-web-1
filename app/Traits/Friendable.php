@@ -104,4 +104,14 @@ trait Friendable
 
         return $friendships;
     }
+
+    public function getAcceptedFriendships()
+    {
+        return Friendship::where(['sender' => Auth::user()->id, 'status' => 1])->orWhere(['recipient' => Auth::user()->id, 'status' => 1])->get();
+    }
+
+    public function getPendingFriendships()
+    {
+        return Friendship::where(['sender' => Auth::user()->id, 'status' => 0])->orWhere(['recipient' => Auth::user()->id, 'status' => 0])->get();
+    }
 }
