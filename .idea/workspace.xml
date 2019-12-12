@@ -3,17 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c0ee8c3b-8feb-40c4-b0b3-7097aeeed9e6" name="Default Changelist" comment="Add post/delete status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Friendship.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Friendship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/Friendable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/Friendable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/left-home-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/left-home-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/profile-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/right-home-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/right-home-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/change-profile-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/change-profile-info.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +224,7 @@
       <workItem from="1575803954078" duration="637000" />
       <workItem from="1576037120823" duration="5915000" />
       <workItem from="1576119839097" duration="283000" />
-      <workItem from="1576127571934" duration="21454000" />
+      <workItem from="1576127571934" duration="23696000" />
     </task>
     <servers />
   </component>
