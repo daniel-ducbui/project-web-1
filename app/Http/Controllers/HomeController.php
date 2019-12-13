@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Friendship;
 use App\Http\Requests\PostsFormRequest;
+use App\Like;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

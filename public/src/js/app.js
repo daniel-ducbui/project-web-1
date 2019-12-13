@@ -12,12 +12,22 @@ $('.card-body').find('.interaction').find('.edit').on('click', function (event) 
     $('#post-content').val(postContent);
     console.log(postContent);
     $('#edit-modal').modal();
-})
+});
+
+// var postId = 0;
+// var postBodyElement = null;
 //
-// $(document).ready(function () {
-//     const privacyOldValue = "{{ old('privacy' }}";
-//
-//     if (privacyOldValue !== '') {
-//         $('#privacy').val('privacyOldValue');
-//     }
+// $('.like').on('click', function (event) {
+//     event.preventDefault();
+//     postId = event.target.parentNode.parentNode.parentNode.parentNode.parentNode.dataset['id'];
+//     var isLike = event.target.previousElementSibling == null;
+//     $.ajax({
+//         method: 'POST',
+//         url: urlLike,
+//         data: { isLike: isLike, postId: postId, _token: token}
+//     })
+//     .done(function () {
+//         // Something
+//     })
+//     console.log(postId);
 // });
