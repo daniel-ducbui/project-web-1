@@ -26,9 +26,11 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/home', 'HomeController@store')->name('post.store');
 
-    Route::get('/home/{post_id}', 'HomeController@destroy')->name('post.delete');;
+    Route::get('/home/post/delete/{post_id}', 'HomeController@destroy')->name('post.delete');;
 
     Route::post('/home/post/edit', 'HomeController@edit')->name('post.edit'); // Pending
+
+    Route::get('/home/post/like/{post_id}', 'LikesController@like')->name('like.like'); // Pending
     ///
     /// End HomeController
 

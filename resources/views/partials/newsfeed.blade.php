@@ -36,13 +36,28 @@
                         </div>
                         <p class="card-text"><small class="text-muted">{{ $p->created_at }}</small>
                         </p>
+
+                        <div class="row justify-content-start">
+                            <div class="col-2">
+                                <div class="alert alert-light" role="alert" style="padding: 5px; margin: 0px;">
+                                    &#10084; {{ count($p->countLikes($p)) }}
+                                </div>
+                            </div>
+                        </div>
                         <div class="row interaction justify-content-start" style="margin-left: 10px;">
                             <div class="col-4">
                                 @if(Auth::user()->isFriendWith($p->user->id) || Auth::user() == $p->user)
-                                    <a class="btn btn-outline-primary" href="#">Like</a>
+                                    @if ($p->isLike($p))
+                                        <a class="btn btn-primary"
+                                           href="{{ route('like.like', ['post_id' => $p->id]) }}">Unlike</a>
+                                    @else
+                                        <a class="btn btn-outline-primary"
+                                           href="{{ route('like.like', ['post_id' => $p->id]) }}">Like</a>
+                                    @endif
+
                                 @endif
                                 @if(Auth::user() == $p->user)
-                                    <a class="btn btn-outline-info edit" href="#">Edit</a> <!-- Chỗ này chưa làm -->
+                                    <a class="btn btn-outline-info edit" href="">Edit</a> <!-- Chỗ này chưa làm -->
                                     <a class="btn btn-outline-danger"
                                        href="{{ route('post.delete', ['post_id' => $p->id]) }}">Delete</a>
                                 @endif
@@ -148,7 +163,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <a class="btn btn-primary" href="">Save</a>
             </div>
         </div>
     </div>
