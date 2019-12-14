@@ -9,13 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class FriendshipsController extends Controller
 {
-    //
-    // Status
-    // 0: Pending
-    // 1: Accepted
-    // 2: Denied
-    // Unfriend -> delete all field relate to this friendship in database
-
     public function __construct()
     {
         $this->middleware(['auth']);
@@ -55,7 +48,7 @@ class FriendshipsController extends Controller
     public function follow($name, $recipient_id)
     {
         Auth::user()->follow($recipient_id);
-        return redirect()->back()->with(['message' => 'Followed']);
+        return redirect()->back()->with(['message' => 'Following']);
     }
 
     public function unfollow($name, $recipient_id)
