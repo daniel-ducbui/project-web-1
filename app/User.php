@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+//use Hootlex\Friendships\Traits\Friendable;
+use App\Traits\Friendable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    use Friendable;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone_number', 'dob', 'profile_picture',
     ];
 
     /**
@@ -36,4 +39,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
+
+    public function friendships()
+    {
+        return $this->belongsToMany('App\User');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
 }
