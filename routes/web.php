@@ -23,16 +23,27 @@ Route::middleware('auth')->group(function () {
     /// HomeController
     ///
     Route::get('/home', 'HomeController@index')->name('home');
-
-    Route::post('/home', 'HomeController@store')->name('post.store');
-
-    Route::get('/home/post/delete/{post_id}', 'HomeController@destroy')->name('post.delete');;
-
-    Route::post('/home/post/edit', 'HomeController@edit')->name('post.edit'); // Pending
-
-    Route::get('/home/post/like/{post_id}', 'LikesController@like')->name('like.like'); // Pending
     ///
     /// End HomeController
+
+    /// Start PostsController
+    ///
+    Route::post('/home', 'PostsController@store')->name('post.store');
+
+    Route::get('/home/post/delete/{post_id}', 'PostsController@destroy')->name('post.delete');;
+
+    Route::post('/home/post/edit', 'PostsController@edit')->name('post.edit'); // Pending
+
+    // Start CommentsController
+    //
+    Route::post('/post/comment', 'CommentsController@store')->name('post.comment.store');
+    //
+    // End CommentsController
+
+    // Once LikesController
+    Route::get('/home/post/like/{post_id}', 'LikesController@like')->name('like.like');
+    ///
+    /// End PostsController
 
     /// Friendships
     ///
@@ -64,7 +75,6 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/profile/details/update', 'UsersController@update')->name('user.update');
     ///
     /// End UsersController
-
 
     /// Change password
     ///

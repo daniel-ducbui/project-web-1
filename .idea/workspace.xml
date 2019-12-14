@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c0ee8c3b-8feb-40c4-b0b3-7097aeeed9e6" name="Default Changelist" comment="Add post/delete status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="posts" />
+        <entry key="$PROJECT_DIR$" value="comments" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -160,21 +163,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
-      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\layouts" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\public" />
       <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth\passwords" />
+      <recent name="C:\wamp64\www\PHP-Laravel\social-network-lrv-v6-1\resources\views\auth" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,11 +223,12 @@
       <workItem from="1575285585198" duration="4983000" />
       <workItem from="1575540034700" duration="202000" />
       <workItem from="1575540459116" duration="6525000" />
-      <workItem from="1575803954078" duration="637000" />
-      <workItem from="1576037120823" duration="5915000" />
-      <workItem from="1576119839097" duration="283000" />
-      <workItem from="1576127571934" duration="26627000" />
-      <workItem from="1576227944120" duration="17211000" />
+      <workItem from="1575547378603" duration="105000" />
+      <workItem from="1575775492059" duration="334000" />
+      <workItem from="1575783145600" duration="162000" />
+      <workItem from="1576304226347" duration="84000" />
+      <workItem from="1576304520454" duration="1051000" />
+      <workItem from="1576305646261" duration="1151000" />
     </task>
     <servers />
   </component>
@@ -258,71 +263,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add post/delete status" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576246600176">
+    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576306249863">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576246600176" />
-    <state x="92" y="138" width="1736" height="850" key="DiffContextDialog" timestamp="1575279192669">
+    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576306249863" />
+    <state x="92" y="138" width="1736" height="850" key="DiffContextDialog" timestamp="1575783197377">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="92" y="138" width="1736" height="850" key="DiffContextDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1575279192669" />
-    <state x="769" y="479" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575280314804">
+    <state x="92" y="138" width="1736" height="850" key="DiffContextDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1575783197377" />
+    <state x="672" y="278" key="MultipleFileMergeDialog" timestamp="1576305694237">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="769" y="479" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.46.1920.1034@0.46.1920.1034" timestamp="1575280314804" />
-    <state x="616" y="262" key="run.anything.popup" timestamp="1576252172900">
+    <state x="672" y="278" key="MultipleFileMergeDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576305694237" />
+    <state x="769" y="479" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576305685006">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1576252172900" />
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1576243158998">
+    <state x="769" y="479" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.46.1920.1034@0.46.1920.1034" timestamp="1576305685006" />
+    <state x="741" y="275" key="git4idea.branch.GitSmartOperationDialog" timestamp="1576305571422">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1576243158998" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
-          <line>20</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
-          <line>22</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
-          <line>26</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
-          <line>28</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
-          <line>34</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
-          <line>44</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/friendships-bar.blade.php</url>
-          <line>49</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php</url>
-          <line>49</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="741" y="275" key="git4idea.branch.GitSmartOperationDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576305571422" />
+    <state x="616" y="262" key="run.anything.popup" timestamp="1575271518955">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575271518955" />
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1575543092464">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575543092464" />
   </component>
 </project>
