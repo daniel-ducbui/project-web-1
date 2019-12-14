@@ -65,13 +65,11 @@
                         </div>
                     </div>
 
-                    {{--                        @if(thisPostHaveComment)--}}
                     <div class="card-footer">
 
                         @include('partials.comments')
 
                     </div>
-                    {{--                    @endif--}}
 
                 </div>
             </div>
