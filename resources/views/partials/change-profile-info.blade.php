@@ -30,12 +30,12 @@
                                id="email" name="email"
                                value="{{ $user->email }}"
                                placeholder="Enter email"
-                               autocomplete="on" required disabled></div>
+                               autocomplete="on" required></div>
                     <div class="form-group"><label class="d-block" for="phone_number">Phone Number</label>
                         <input class="form-control" type="tel"
                                name="phone_number" placeholder="Enter phone-number"
                                value="{{ $user->phone_number }}"
-                               autocomplete="on" required disabled></div>
+                               autocomplete="on" required></div>
 
                     <div class="form-group"><label class="d-block"
                                                    for="dob">Birthday</label>

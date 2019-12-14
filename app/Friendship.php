@@ -13,6 +13,6 @@ class Friendship extends Model
 
     public function user()
     {
-        return $this->hasMany(Friendship::class);
+        return $this->hasMany('App\Friendship', 'id', 'id');
     }
 }

@@ -44,7 +44,6 @@ class UsersController extends Controller
         $this->validate($request, [
             'name' => 'required|string|min:2|max:255',
             //'email' => 'required|email|max:255|unique:users',
-            //'phone_number' => 'required|max:10|unique:users',
             'profile_picture' => 'image|mimes:jpeg,gif,png,jpg,svg|max:4096',
         ]);
 
@@ -75,10 +74,20 @@ class UsersController extends Controller
         $user->update([
             'name' => $request->get('name'),
             'dob' => $request->get('dob'),
-            //'email' => $request->get('email'),
-            //'phone_number' => $request->get('phone_number'),
             'profile_picture' => $imageTmp,
         ]);
+
+        if (($request->phone_number != $user->phone_number) && $this->validate($request, ['phone_number' => 'required|max:10|unique:users'])) {
+            $user->update([
+                'phone_number' => $request->get('phone_number'),
+            ]);
+        }
+
+        if (($request->email != $user->email) && $this->validate($request, ['email' => 'required|email|max:255|unique:users|regex:/^.+@.+$/i'])) {
+            $user->update([
+                'email' => $request->get('email'),
+            ]);
+        }
 
         return redirect()->back()->with('message', 'Profile details updated');
     }
