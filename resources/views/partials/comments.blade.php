@@ -6,7 +6,7 @@
 
                 {!! csrf_field() !!}
 
-                <div class="row">
+                <div class="row" style="padding-left:50px;">
 
                     <div class="col-10">
                         <div class="form-group">
