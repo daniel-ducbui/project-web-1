@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c0ee8c3b-8feb-40c4-b0b3-7097aeeed9e6" name="Default Changelist" comment="Add post/delete status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/newsfeed.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ChatFormComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ChatMessagesComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/MessageComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/UserComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,10 +284,10 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="672" y="278" key="MultipleFileMergeDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576305694237" />
-    <state x="735" y="284" key="RollbackChangesDialog" timestamp="1576643534381">
+    <state x="735" y="284" key="RollbackChangesDialog" timestamp="1576667950646">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="735" y="284" key="RollbackChangesDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576643534381" />
+    <state x="735" y="284" key="RollbackChangesDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576667950646" />
     <state x="769" y="479" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576305685006">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>

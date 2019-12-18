@@ -67,15 +67,15 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @auth
+{{--                    @auth--}}
 {{--                        <a href="{{ url('/home') }}">Home</a>--}}
-                    @else
+                    @guest
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
-                    @endauth
+                    @endguest
                 </div>
             @endif
 
@@ -84,9 +84,15 @@
                     Hello there!
                 </div>
 
-                <div class="links">
-                    <a href="{{ route('home') }}">Go to news feed &#xbb;</a>
-                </div>
+                @auth
+                    <div class="links">
+                        <a href="{{ route('home') }}">Go to news feed &#xbb;</a>
+                    </div>
+                @else
+                    <div class="links">
+                        <a href="{{ route('home') }}">Welcome to my site &#xbb;</a>
+                    </div>
+                @endauth
             </div>
         </div>
     </body>
