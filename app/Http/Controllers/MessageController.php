@@ -43,6 +43,7 @@ class MessageController extends Controller
             'user_id' => $user_id,
         ]);
 
+        // Send mail
         $user = User::where('id', $user_id)->first();
         $auth = Auth::user();
 

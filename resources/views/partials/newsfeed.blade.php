@@ -27,6 +27,18 @@
                                 </h5>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col- offset-1">
+                                <p class="card-text"><small class="text-muted">{{ ($p->privacy == 0) ? 'Only me' : (($p->privacy == 1) ? 'Friends' : 'Public') }}</small>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><small class="text-muted">{{ $p->created_at }}</small>
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="info">
                             @if($p->post_content)
                                 <p id="user_post_content" class="card-text" style="margin-top: 10px;">
@@ -34,8 +46,6 @@
                                 </p>
                             @endif
                         </div>
-                        <p class="card-text"><small class="text-muted">{{ $p->created_at }}</small>
-                        </p>
 
                         <div class="row justify-content-start">
                             <div class="col-2">
@@ -57,7 +67,7 @@
 
                                 @endif
                                 @if(Auth::user() == $p->user)
-                                    <a class="btn btn-outline-info edit" href="">Edit</a> <!-- Chỗ này chưa làm -->
+                                    <a class="btn btn-outline-info" href="">Edit</a> <!-- Chỗ này chưa làm -->
                                     <a class="btn btn-outline-danger"
                                        href="{{ route('post.delete', ['post_id' => $p->id]) }}">Delete</a>
                                 @endif
@@ -85,30 +95,3 @@
     </div>
 </div>
 <!-- Page navigator -->
-
-<!-- Start modal -->
-<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit content</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="post_content" class="col-form-label">Content</label>
-                        <textarea class="form-control" name="post-content" id="post-content" rows="5"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="">Save</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End modal-->
