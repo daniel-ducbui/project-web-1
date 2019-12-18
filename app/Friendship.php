@@ -11,6 +11,16 @@ class Friendship extends Model
         'sender', 'recipient', 'status',
         ];
 
+    public function sender()
+    {
+        return $this->getAttribute('sender');
+    }
+
+    public function recipient()
+    {
+        return $this->getAttribute('recipient');
+    }
+
     public function user()
     {
         return $this->hasMany('App\Friendship', 'id', 'id');

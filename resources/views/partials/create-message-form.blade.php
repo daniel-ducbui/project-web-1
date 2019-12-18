@@ -13,9 +13,9 @@
                 class="btn btn-outline-primary btn-block form-group"
                 type="submit" value="Submit" style="margin-bottom: 10px;">Send
             </button>
-            <span class="notice">
-                Hit Enter to send a message
-            </span>
+{{--            <span class="notice">--}}
+{{--                Hit Enter to send a message--}}
+{{--            </span>--}}
         </form>
     </div>
 </div>

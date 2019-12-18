@@ -73,6 +73,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/chat/{user_id}', 'MessageController@store')->name('message.store');
 
+    Route::get('/chat/{user_id}/{message_id}', 'MessageController@destroy')->name('message.delete');
+
 //    Route::get('/chat/{user_id}', 'MessageController@index');
     ///
     /// End ChatController
