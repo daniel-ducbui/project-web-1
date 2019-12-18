@@ -37,13 +37,15 @@ Route::middleware('auth')->group(function () {
     // Start CommentsController
     //
     Route::post('/post/comment/{post}', 'CommentsController@store')->name('post.comment.store');
-
-//    Route::post('/post/comment/{post}', 'CommentsController@getComments')->name('post.comment.get');
     //
     // End CommentsController
 
     // Once LikesController
+    //
     Route::get('/home/post/like/{post_id}', 'LikesController@like')->name('like.like');
+    //
+    // End LikesController
+
     ///
     /// End PostsController
 
@@ -64,6 +66,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/{user_name}/{recipient_id}/unfollow', 'FriendshipsController@unfollow')->name('request.unfollow');
     ///
     /// End Friendships
+
+    /// Start ChatController
+    ///
+    Route::get('/chat/{user_id}', 'MessageController@index')->name('chat.message');
+
+    Route::post('/chat/{user_id}', 'MessageController@store')->name('message.store');
+
+    Route::get('/chat/{user_id}/{message_id}', 'MessageController@destroy')->name('message.delete');
+
+//    Route::get('/chat/{user_id}', 'MessageController@index');
+    ///
+    /// End ChatController
 });
 
 

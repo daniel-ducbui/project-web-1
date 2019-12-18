@@ -19,8 +19,8 @@
                     @if(Auth::user()->id != $user->id) {{-- Check if this is my profile --}}
                         @if(Auth::user()->isFriendWith($user->id))  {{-- Check if this profile is my friend --}}
 
-                        <a class="btn btn-light text-primary border rounded border-primary shadow-sm action-button"
-                           href=""
+                        <a class="btn btn-light text-success border rounded border-success shadow-sm action-button"
+                           href="{{ route('chat.message', ['user_id' => $user->id]) }}"
                         >Message</a>
                         <a class="btn btn-light text-danger border rounded border-danger shadow-sm action-button"
                            href="{{ route('request.unfriend', [$user->name, $user->id]) }}"
