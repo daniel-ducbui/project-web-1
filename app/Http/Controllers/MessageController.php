@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendMailable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Message;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
@@ -40,6 +42,17 @@ class MessageController extends Controller
             'recipient' => $user_id,
             'user_id' => $user_id,
         ]);
+
+        $user = User::where('id', $user_id)->first();
+        $auth = Auth::user();
+
+        $details = [
+            'title' => 'New message',
+            'body' => "You have new message from $auth->name",
+            'messages' => $request['content'],
+        ];
+
+        Mail::to($user->email)->send(new SendMailable($details));
 
         //return response()->json($message);
 //        return response()->redirectToRoute('chat.message', $user_id);

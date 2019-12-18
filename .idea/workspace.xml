@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c0ee8c3b-8feb-40c4-b0b3-7097aeeed9e6" name="Default Changelist" comment="Add post/delete status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Friendship.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Friendship.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendshipsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_17_010251_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_17_010251_create_messages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/create-message-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/create-message-form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,10 +265,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add post/delete status" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576322775908">
+    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576656263175">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576322775908" />
+    <state x="690" y="317" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576656263175" />
     <state x="92" y="138" width="1736" height="850" key="DiffContextDialog" timestamp="1575783197377">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
@@ -281,6 +277,10 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="672" y="278" key="MultipleFileMergeDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576305694237" />
+    <state x="735" y="284" key="RollbackChangesDialog" timestamp="1576643534381">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="735" y="284" key="RollbackChangesDialog/0.46.1920.1034@0.46.1920.1034" timestamp="1576643534381" />
     <state x="769" y="479" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576305685006">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
@@ -293,10 +293,10 @@
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="616" y="262" key="run.anything.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1575271518955" />
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1576637893161">
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1576654738525">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1576637893161" />
+    <state x="1103" y="269" width="672" height="678" key="search.everywhere.popup/0.46.1920.1034@0.46.1920.1034" timestamp="1576654738525" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

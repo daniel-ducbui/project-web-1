@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Friendship;
+use App\Mail\SendMailable;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class FriendshipsController extends Controller
 {
@@ -16,7 +18,18 @@ class FriendshipsController extends Controller
 
     public function send($name, $recipient_id)
     {
-        Auth::user()->befriend($recipient_id);
+        $user = User::where('id', $recipient_id)->first();
+        $auth = Auth::user();
+
+        $auth->befriend($recipient_id);
+
+        $details = [
+            'title' => 'New friend request',
+            'body' => "You have new friend request from $auth->name",
+            'url' => "http://127.0.0.1:8000/profile/$auth->name/$auth->id",
+        ];
+
+        Mail::to($user->email)->send(new SendMailable($details));
 
         return redirect()->back()->with(['message' => 'Friend requests has sent']);
     }
