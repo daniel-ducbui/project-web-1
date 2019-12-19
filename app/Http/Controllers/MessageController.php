@@ -29,6 +29,10 @@ class MessageController extends Controller
 
     public function store(Request $request, $user_id)
     {
+        $request->validate([
+           'content' => 'string|min:1',
+        ]);
+
         $own_box = Message::create([
             'content' => $request['content'],
             'sender' => Auth::user()->id,
@@ -53,7 +57,7 @@ class MessageController extends Controller
             'messages' => $request['content'],
         ];
 
-        Mail::to($user->email)->send(new SendMailable($details));
+        // Mail::to($user->email)->send(new SendMailable($details));
 
         //return response()->json($message);
 //        return response()->redirectToRoute('chat.message', $user_id);

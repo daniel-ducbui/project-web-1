@@ -30,7 +30,8 @@
 
                         <div class="row">
                             <div class="col- offset-1">
-                                <p class="card-text"><small class="text-muted">{{ ($p->privacy == 0) ? 'Only me' : (($p->privacy == 1) ? 'Friends' : 'Public') }}</small>
+                                <p class="card-text"><small
+                                        class="text-muted">{{ ($p->privacy == 0) ? 'Only me' : (($p->privacy == 1) ? 'Friends' : 'Public') }}</small>
                                 </p>
                             </div>
                             <div class="col">
@@ -55,19 +56,19 @@
                             </div>
                         </div>
                         <div class="row interaction justify-content-start" style="margin-left: 10px;">
-                            <div class="col-4">
+                            <div class="col-6">
                                 @if(Auth::user()->isFriendWith($p->user->id) || Auth::user() == $p->user)
-                                    @if ($p->isLike($p))
-                                        <a class="btn btn-primary"
-                                           href="{{ route('like.like', ['post_id' => $p->id]) }}">Unlike</a>
-                                    @else
-                                        <a class="btn btn-outline-primary"
-                                           href="{{ route('like.like', ['post_id' => $p->id]) }}">Like</a>
-                                    @endif
-
+                                    <a class="btn btn-{{ $p->isLike($p) ? '' : 'outline-' }}primary"
+                                       href="{{ route('like.like', ['post_id' => $p->id]) }}" style="padding-bottom: 0px;">
+                                        <i class="material-icons">
+                                            favorite{{ $p->isLike($p) ? '' : '_border' }}
+                                        </i>
+                                    </a>
                                 @endif
+
+                                <a class="btn btn-outline-info" href="{{ route('post.show', [$p->id]) }}">Details</a>
+
                                 @if(Auth::user() == $p->user)
-                                    <a class="btn btn-outline-info" href="">Edit</a> <!-- Chỗ này chưa làm -->
                                     <a class="btn btn-outline-danger"
                                        href="{{ route('post.delete', ['post_id' => $p->id]) }}">Delete</a>
                                 @endif

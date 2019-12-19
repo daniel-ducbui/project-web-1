@@ -30,9 +30,11 @@ Route::middleware('auth')->group(function () {
     ///
     Route::post('/home', 'PostsController@store')->name('post.store');
 
-    Route::get('/home/post/delete/{post_id}', 'PostsController@destroy')->name('post.delete');;
+    Route::get('/post/delete/{post_id}', 'PostsController@destroy')->name('post.delete');;
 
-    Route::post('/home/post/edit', 'PostsController@edit')->name('post.edit'); // Pending
+    Route::get('/post/show/{post_id}', 'PostsController@show')->name('post.show');
+
+    Route::post('/post/edit/{post_id}', 'PostsController@edit')->name('post.edit');
 
     // Start CommentsController
     //
@@ -42,7 +44,7 @@ Route::middleware('auth')->group(function () {
 
     // Once LikesController
     //
-    Route::get('/home/post/like/{post_id}', 'LikesController@like')->name('like.like');
+    Route::get('/post/like/{post_id}', 'LikesController@like')->name('like.like');
     //
     // End LikesController
 
