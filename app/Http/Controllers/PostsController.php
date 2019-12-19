@@ -61,9 +61,14 @@ class PostsController extends Controller
         return response()->redirectToRoute('home')->with(['message' => $noti]);
     }
 
+    public function findPostById($post_id)
+    {
+        return Post::where('id', $post_id)->first();
+    }
+
     public function destroy($post_id)
     {
-        $post = Post::where('id', $post_id)->first();
+        $post = $this->findPostById($post_id);
 
         if (Auth::user() != $post->user) {
             return redirect()->back()->with(['message' => 'Can not delete!']);
@@ -71,12 +76,29 @@ class PostsController extends Controller
         // Else
         $post->delete();
 
-        return redirect()->back()->with(['message' => 'Post deleted']);
+        return redirect()->route('home')->with(['message' => 'Post deleted']);
     }
 
-    public function edit()
+    public function show($post_id)
     {
-        // Pending
-        return redirect()->back()->with('message', 'Function is not done yet!');
+        $p = $this->findPostById($post_id);
+
+        return view('partials.edit-post', compact('p'))->with('user', Auth::user());
+    }
+
+    public function edit(Request $request, $post_id)
+    {
+        $p = $this->findPostById($post_id);
+
+        if ($request['privacy'] != $p->privacy) {
+
+            $p->update([
+                'privacy' => $request['privacy'],
+            ]);
+
+            return redirect()->back()->with('message', 'Saved');
+        }
+
+        return redirect()->back()->with('message', 'Nothing to save!');
     }
 }
