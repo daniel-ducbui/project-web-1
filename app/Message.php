@@ -15,4 +15,9 @@ class Message extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function findUserById($id)
+    {
+        return User::where('id', $id)->first();
+    }
 }

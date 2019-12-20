@@ -10,7 +10,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <div class="shadow md card mb-3" style="padding: 10px;">
+                        <div class="shadow shadow-lg p-3 mb-5 bg-white rounded card" style="padding: 10px;">
                             @if($p->post_photo)
                                 <img class="img-fluid card-img-top" style="padding-top: 5px;"
                                      src="{{ 'data:image/jpeg;base64,' . base64_encode($p->post_photo) }}"
@@ -109,19 +109,15 @@
                                         @endif
 
                                         @if(Auth::user() == $p->user)
-
                                             <a class="btn btn-outline-danger"
                                                href="{{ route('post.delete', ['post_id' => $p->id]) }}">Delete</a>
-
                                         @endif
                                     </div>
                                 </div>
                             </div>
 
                             <div class="card-footer">
-
                                 @include('partials.comments')
-
                             </div>
 
                         </div>
@@ -130,7 +126,7 @@
 
             </div>
             <div class="col-2">
-                @include('partials.right-home-page')
+{{--                @include('partials.right-home-page')--}}
             </div>
         </div>
     </div>

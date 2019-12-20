@@ -2,7 +2,7 @@
     @foreach($posts as $p)
         <div class="row">
             <div class="col">
-                <div class="shadow md card mb-3" style="padding: 10px;">
+                <div class="shadow shadow-lg p-3 mb-5 bg-white rounded card" style="padding: 10px;">
                     @if($p->post_photo)
                         <img class="img-fluid card-img-top" style="padding-top: 5px;"
                              src="{{ 'data:image/jpeg;base64,' . base64_encode($p->post_photo) }}"
@@ -57,7 +57,7 @@
                         </div>
                         <div class="row interaction justify-content-start" style="margin-left: 10px;">
                             <div class="col-6">
-                                @if(Auth::user()->isFriendWith($p->user->id) || Auth::user() == $p->user)
+                                @if(Auth::user()->isFriendWith($p->user->id) || Auth::user()->id == $p->user->id)
                                     <a class="btn btn-{{ $p->isLike($p) ? '' : 'outline-' }}primary"
                                        href="{{ route('like.like', ['post_id' => $p->id]) }}" style="padding-bottom: 0px;">
                                         <i class="material-icons">
@@ -68,7 +68,7 @@
 
                                 <a class="btn btn-outline-info" href="{{ route('post.show', [$p->id]) }}">Details</a>
 
-                                @if(Auth::user() == $p->user)
+                                @if(Auth::user()->id == $p->user->id)
                                     <a class="btn btn-outline-danger"
                                        href="{{ route('post.delete', ['post_id' => $p->id]) }}">Delete</a>
                                 @endif
@@ -77,9 +77,7 @@
                     </div>
 
                     <div class="card-footer">
-
                         @include('partials.comments')
-
                     </div>
 
                 </div>

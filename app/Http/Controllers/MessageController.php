@@ -22,9 +22,15 @@ class MessageController extends Controller
         $user = User::where('id', $user_id)->first();
 
         $messages = Message::where('sender', Auth::user()->id)->where('recipient', $user_id)->where('user_id', Auth::user()->id)
-            ->orWhere('recipient', Auth::user()->id)->where('sender', $user_id)->where('user_id', Auth::user()->id)->get();
+            ->orWhere('recipient', Auth::user()->id)->where('sender', $user_id)->where('user_id', Auth::user()->id)->orderByDesc('created_at')->get();
+
+        // Get friendships
+        $accepted = Auth::user()->getAcceptedFriendships();
+        // Get pending
+        $pending = Auth::user()->getPendingFriendships();
+
         //return response()->json($messages);
-        return view('chat', compact('messages'))->with(['user' => $user]);
+        return view('chat', compact('messages', 'accepted', 'pending'))->with(['user' => $user]);
     }
 
     public function store(Request $request, $user_id)
@@ -33,15 +39,18 @@ class MessageController extends Controller
            'content' => 'string|min:1',
         ]);
 
+        $content = $request['content'];
+        $content_path = substr($content, 0, 10) . '...';
+
         $own_box = Message::create([
-            'content' => $request['content'],
+            'content' => $content,
             'sender' => Auth::user()->id,
             'recipient' => $user_id,
             'user_id' => Auth::user()->id,
         ]);
 
         $friend_box = Message::create([
-            'content' => $request['content'],
+            'content' => $content,
             'sender' => Auth::user()->id,
             'recipient' => $user_id,
             'user_id' => $user_id,
@@ -54,7 +63,7 @@ class MessageController extends Controller
         $details = [
             'title' => 'New message',
             'body' => "You have new message from $auth->name",
-            'messages' => $request['content'],
+            'messages' => $content_path,
         ];
 
         // Mail::to($user->email)->send(new SendMailable($details));

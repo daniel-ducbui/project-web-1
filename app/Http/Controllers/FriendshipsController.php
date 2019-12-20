@@ -29,7 +29,7 @@ class FriendshipsController extends Controller
             'url' => "http://127.0.0.1:8000/profile/$auth->name/$auth->id",
         ];
 
-        Mail::to($user->email)->send(new SendMailable($details));
+        // Mail::to($user->email)->send(new SendMailable($details));
 
         return redirect()->back()->with(['message' => 'Friend requests has sent']);
     }

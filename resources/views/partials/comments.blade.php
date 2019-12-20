@@ -1,4 +1,4 @@
-@if(Auth::user()->isFriendWith($p->user->id) || Auth::user() == $p->user)
+@if(Auth::user()->isFriendWith($p->user->id) || Auth::user()->id == $p->user->id)
     <div class="row">
         <div class="col">
             <form action="{{ route('post.comment.store', ['post' => $p]) }}" method="POST"

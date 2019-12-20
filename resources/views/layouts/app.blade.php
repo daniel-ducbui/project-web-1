@@ -26,67 +26,8 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
-{{--            <a class="navbar-brand" href="{{ url('/') }}">--}}
-{{--                {{ config('app.name', 'Hello there!') }}--}}
-{{--            </a>--}}
-            <a class="navbar-brand" href="{{ url('/') }}">
-                Introduction
-            </a>
-            <a class="navbar-brand" href="{{ url('/home') }}">
-                Home
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-                    @yield('navbar-left')
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    @if(Auth::user())
-                        <a class="btn btn-outline-light text-primary shadow-sm" role="button"
-                           href="{{ route('user.profile', ['user_name' => Auth::user()->name, 'user_id' => Auth::user()->id]) }}"
-                        > {{ Auth::user()->name }}
-                        </a>
-                    @endif
-                    <!-- Authentication Links -->
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <div class="row">
-                            <div class="col">
-                                <a class="btn btn-outline-light text-danger shadow-sm" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </div>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
 
     <main class="py-4">
         @yield('content')
