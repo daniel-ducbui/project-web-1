@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 100px;">
-                <form action="{{ route('password.change') }}" class="border rounded border-light shadow" method="POST"
+                <form action="{{ route('password.change') }}" class="border border-light shadow shadow-lg p-3 mb-5 bg-white rounded" method="POST"
                       style="padding: 20px;" enctype="multipart/form-data">
 
                 @include('errors.message-block')

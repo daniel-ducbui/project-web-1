@@ -1,4 +1,4 @@
-<div class="row shadow shadow-sm" style="border: 1px solid black;padding: 10px;border-radius: 3px;">
+<div class="row shadow shadow-lg p-3 mb-5 bg-white rounded" style="border: 1px solid black;padding: 10px;border-radius: 3px;">
     <div class="col">
         <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
 
@@ -23,9 +23,9 @@
                     <select id="privacy"
                             class="custom-select custom-select-sm"
                             name="privacy">
-                        <option value="0" {{ old('privacy') == 0 ? 'selected' : '' }}>Only me</option>
-                        <option value="1" {{ old('privacy') == 1 ? 'selected' : '' }}>Friends</option>
-                        <option value="2" {{ old('privacy') == 2 ? 'selected' : '' }}>Public</option>
+                        <option value="0" {{ $user->posts->last() ? ($user->posts->last()->privacy == 0 ? 'selected' : '') : '' }}>Only me</option>
+                        <option value="1" {{ $user->posts->last() ? ($user->posts->last()->privacy == 1 ? 'selected' : '') : '' }}>Friends</option>
+                        <option value="2" {{ $user->posts->last() ? ($user->posts->last()->privacy == 2 ? 'selected' : '') : '' }}>Public</option>
                     </select>
                 </div>
             </div>

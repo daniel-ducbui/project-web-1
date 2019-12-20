@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Friendship;
-use App\Http\Requests\PostsFormRequest;
-use App\Like;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Auth\Events\Login;
 use App\User;
 
 class HomeController extends Controller
@@ -18,9 +16,6 @@ class HomeController extends Controller
         $this->middleware(['auth', 'verified']);
     }
 
-    // Only me: 0
-    // Friend: 1
-    // Public: 2
     public function index()
     {
         $user = Auth::user();
@@ -35,13 +30,16 @@ class HomeController extends Controller
         return view('home', compact('posts', 'accepted', 'pending'))->with(['user' => $user]);
     }
 
+    // Only me: 0
+    // Friend: 1
+    // Public: 2
     public function getPosts()
     {
         $posts = Post::where(['user_id' => Auth::user()->id])
-            ->Where(['privacy' => 1])
-            ->orWhere(['privacy' => 2])
-            ->orWhere(['privacy' => 0])
-            ->where(['user_id' => Auth::user()->id]);
+            ->where(['privacy' => 0])
+            ->orWhere(['privacy' => 1])
+            ->where(['user_id' => Auth::user()->id])
+            ->orWhere(['privacy' => 2]);
 
         return $posts->orderByDesc('created_at')->paginate(10);
     }

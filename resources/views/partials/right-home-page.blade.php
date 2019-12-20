@@ -1,16 +1,9 @@
 <div class="my-scroll">
 
-    {{--    <p class="text-muted">Friends</p>--}}
-
-    {{--    <hr>--}}
-
-    {{--    @include('partials.friendships-bar')--}}
-
-    {{-- Notification --}}
-
-    <p class="text-muted">Notifications</p>
+    <p class="text-muted">Friends</p>
 
     <hr>
 
-    @include('errors.message-block')
+    @include('partials.friendships-bar')
+
 </div>

@@ -25,4 +25,9 @@ class Friendship extends Model
     {
         return $this->hasMany('App\Friendship', 'id', 'id');
     }
+
+    public function findUserById($id)
+    {
+        return User::where('id', $id)->first();
+    }
 }
