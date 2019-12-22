@@ -161,7 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Hootlex\Friendships\FriendshipsServiceProvider::class,
 
         /*
          * Package Service Providers...
