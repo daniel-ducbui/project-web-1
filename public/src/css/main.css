@@ -7,6 +7,12 @@ div.my-scroll {
     overflow-y: auto;
 }
 
+div.my-fixed {
+    position: fixed;
+    flex: 0 0 16.67%;
+    max-width: 16.67%;
+}
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;

@@ -48,6 +48,33 @@ class UsersController extends Controller
         return view('partials.change-profile-info', ['user' => Auth::user()]);
     }
 
+    function resize_image($file, $w, $h, $crop=FALSE) {
+        list($width, $height) = getimagesize($file);
+        $r = $width / $height;
+        if ($crop) {
+            if ($width > $height) {
+                $width = ceil($width-($width*abs($r-$w/$h)));
+            } else {
+                $height = ceil($height-($height*abs($r-$w/$h)));
+            }
+            $newwidth = $w;
+            $newheight = $h;
+        } else {
+            if ($w/$h > $r) {
+                $newwidth = $h*$r;
+                $newheight = $h;
+            } else {
+                $newheight = $w/$r;
+                $newwidth = $w;
+            }
+        }
+        $src = imagecreatefromjpeg($file);
+        $dst = imagecreatetruecolor($newwidth, $newheight);
+        imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+        return $dst;
+    }
+
     public function update(Request $request)
     {
         $this->validate($request, [
@@ -63,7 +90,7 @@ class UsersController extends Controller
             // Get file
             $image = $request->file('profile_picture');
             // Directory
-            $imagePath = 'src/images/profile/';
+            $imagePath = '..\src\images\profile\/';
             // Get file name
             $imageName = $image->getClientOriginalName();
 
@@ -71,9 +98,11 @@ class UsersController extends Controller
             // Store file
             $image->move(public_path($imagePath), $imageName);
             // Resize image --> Pending
-            //??
+            $ri = $this->resize_image(public_path($imagePath . $imageName), 1080, 1080, true);
+            imagejpeg($ri, public_path($imagePath . $imageName));
+
             // Convert to string
-            $imageTmp = file_get_contents($imagePath . $imageName);
+            $imageTmp = file_get_contents(public_path($imagePath . $imageName));
             // Save data to database
             $user->profile_picture = $imageTmp;
         } else {

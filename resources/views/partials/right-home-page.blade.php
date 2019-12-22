@@ -1,9 +1,11 @@
 <div class="my-scroll">
 
-    <p class="text-muted">Friends</p>
+    <div class="col- my-fixed">
+        <p class="text-muted">Friends</p>
 
-    <hr>
+        <hr>
 
-    @include('partials.friendships-bar')
+        @include('partials.friendships-bar')
+    </div>
 
 </div>

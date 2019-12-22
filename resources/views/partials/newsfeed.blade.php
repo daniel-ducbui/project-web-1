@@ -2,7 +2,7 @@
     @foreach($posts as $p)
         <div class="row">
             <div class="col">
-                <div class="shadow shadow-lg p-3 mb-5 bg-white rounded card" style="padding: 10px;">
+                <div class="shadow-lg p-3 mb-5 bg-white rounded card">
                     @if($p->post_photo)
                         <img class="img-fluid card-img-top" style="padding-top: 5px;"
                              src="{{ 'data:image/jpeg;base64,' . base64_encode($p->post_photo) }}"

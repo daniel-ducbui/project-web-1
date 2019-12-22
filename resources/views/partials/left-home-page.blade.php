@@ -1,11 +1,15 @@
-@include('partials.profile-bar')
+<div class="row justify-content-center">
+    <div class="col- my-fixed">
+        @include('partials.profile-bar')
 
-<hr>
+        <hr>
 
-{{-- Notification --}}
+        {{-- Notification --}}
 
-<p class="text-muted">Notifications</p>
+        <p class="text-muted">Notifications</p>
 
-<hr>
+        <hr>
 
-@include('errors.message-block')
+        @include('errors.message-block')
+    </div>
+</div>

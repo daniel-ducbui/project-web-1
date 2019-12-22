@@ -15,6 +15,33 @@ class PostsController extends Controller
         $this->middleware(['auth']);
     }
 
+    function resize_image($file, $w, $h, $crop=FALSE) {
+        list($width, $height) = getimagesize($file);
+        $r = $width / $height;
+        if ($crop) {
+            if ($width > $height) {
+                $width = ceil($width-($width*abs($r-$w/$h)));
+            } else {
+                $height = ceil($height-($height*abs($r-$w/$h)));
+            }
+            $newwidth = $w;
+            $newheight = $h;
+        } else {
+            if ($w/$h > $r) {
+                $newwidth = $h*$r;
+                $newheight = $h;
+            } else {
+                $newheight = $w/$r;
+                $newwidth = $w;
+            }
+        }
+        $src = imagecreatefromjpeg($file);
+        $dst = imagecreatetruecolor($newwidth, $newheight);
+        imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+        return $dst;
+    }
+
     public function store(PostsFormRequest $request)
     {
         $user = Auth::user();
@@ -45,7 +72,8 @@ class PostsController extends Controller
                 // Store file
                 $image->move(public_path($imagePath), $imageName);
                 // Resize image --> Pending
-
+                $ri = $this->resize_image(public_path($imagePath . $imageName), 1080, 1080);
+                imagejpeg($ri, public_path($imagePath . $imageName));
 
                 // Convert to string
                 $imageTmp = file_get_contents(public_path($imagePath . $imageName));
