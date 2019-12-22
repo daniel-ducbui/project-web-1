@@ -67,7 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $pp = file_get_contents('src\images\default_profile_picture.png');
+        $pp = file_get_contents(public_path('..\src\images\default_profile_picture.png'));
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

@@ -37,7 +37,7 @@ class PostsController extends Controller
                 // Get file
                 $image = $request->file('post_photo');
                 // Directory
-                $imagePath = 'src/images/post/';
+                $imagePath = "..\src\images\post\/";
                 // Get file name
                 $imageName = $image->getClientOriginalName();
 
@@ -48,7 +48,7 @@ class PostsController extends Controller
 
 
                 // Convert to string
-                $imageTmp = file_get_contents($imagePath . $imageName);
+                $imageTmp = file_get_contents(public_path($imagePath . $imageName));
                 // Save data to database
                 $post->post_photo = $imageTmp;
             }
